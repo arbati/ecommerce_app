@@ -4,7 +4,6 @@ var defaultEnvConfig = require('./default');
 
 module.exports = {
   db: {
-  // uri:'mongodb://abdorbati:FfvIY1Cs0rvZBo1S@cluster0-shard-00-00.ebfzh.mongodb.net:27017,cluster0-shard-00-01.ebfzh.mongodb.net:27017,cluster0-shard-00-02.ebfzh.mongodb.net:27017/ecommerce_app?ssl=true&replicaSet=atlas-nrd8fg-shard-0&authSource=admin&retryWrites=true&w=majority',
   uri:'mongodb://localhost:27017/local-dev', 
   options: {},
     // Enable mongoose debug mode
