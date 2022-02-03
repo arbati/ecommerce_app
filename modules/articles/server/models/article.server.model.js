@@ -17,11 +17,21 @@ var ArticleSchema = new Schema({
     type: Date,
     default: Date.now
   },
+    photo: {
+    type: String,
+    default: '',
+    required: 'Photo cannot be blank'
+  },
   title: {
     type: String,
     default: '',
     trim: true,
     required: 'Title cannot be blank'
+  },
+    price: {
+    type: Number,
+    default: 0,
+    required: 'price cannot be blank'
   },
   content: {
     type: String,
