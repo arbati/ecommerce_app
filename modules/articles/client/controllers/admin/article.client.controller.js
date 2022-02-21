@@ -5,12 +5,13 @@
     .module('articles.admin')
     .controller('ArticlesAdminController', ArticlesAdminController);
 
-  ArticlesAdminController.$inject = ['$scope', '$state', '$window', 'articleResolve', 'Authentication', 'Notification'];
+  ArticlesAdminController.$inject = ['$scope', '$state', '$window', 'articleResolve', 'Authentication', 'Notification','CategoriesService'];
 
-  function ArticlesAdminController($scope, $state, $window, article, Authentication, Notification) {
+  function ArticlesAdminController($scope, $state, $window, article, Authentication, Notification, CategoriesService) {
     var vm = this;
 
     vm.article = article;
+     vm.categories = CategoriesService.query();
     vm.authentication = Authentication;
     vm.form = {};
     vm.remove = remove;

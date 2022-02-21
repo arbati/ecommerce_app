@@ -1,3 +1,22 @@
+<div class="breadcrumb-area">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <ul>
+                            <li class="active"><a href="/admin/users">All users</a></li>
+                            <li>update user</li>
+                        </ul>
+                    </div>
+                </div>
+</div>
+
+              <div class="about-us-wrapper pt-60 pb-40">
+                <div class="container">
+                    <div class="row">
+                   
+                        <div class="col-12 order-last order-lg-first">
+                            <div class="about-text-wrap">
+
+
 <section>
   <div class="page-header">
     <div class="row">
@@ -6,10 +25,10 @@
       </div>
       <div class="col-md-4">
         <a class="btn btn-primary" ui-sref="admin.user-edit({userId: vm.user._id})">
-          <i class="glyphicon glyphicon-edit"></i>
+          <i class="glyphicon glyphicon-edit"></i> Edit user
         </a>
-        <a class="btn btn-primary" ng-click="vm.remove()" ng-if="!vm.isContextUserSelf()">
-          <i class="glyphicon glyphicon-trash"></i>
+        <a class="btn btn-danger" ng-click="vm.remove()" ng-if="!vm.isContextUserSelf()">
+          <i class="glyphicon glyphicon-trash"></i> Delete user
         </a>
       </div>
     </div>
@@ -49,3 +68,13 @@
     </div>
   </div>
 </section>
+
+
+                     </div>
+                        </div>
+                
+                    </div>
+                </div>
+              </div>
+
+              <div class="about-us-wrapper pt-60 pb-40"></div>

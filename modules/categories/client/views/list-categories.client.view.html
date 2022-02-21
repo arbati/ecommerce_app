@@ -1,0 +1,28 @@
+<section>
+  <div class="page-header">
+    <h1>Categories</h1>
+  </div>
+
+  <table class="table">
+      <tr data-ng-repeat="category in vm.categories">
+      
+        <td>
+            <a  ui-sref="categories.view({categoryId: category._id})" class="text-secondary">           
+                <small class="">
+                  Posted on
+                  <span data-ng-bind="category.created | date:'mediumDate'"></span>
+                  by
+                  <span ng-if="category.user" ng-bind="category.user.displayName"></span>
+                  <span ng-if="!category.user">Deleted User</span>
+                </small>
+                
+                <h4 class="text-secondary" data-ng-bind="category.title"></h4>  
+
+            </a>
+        </td>
+    
+      </tr>
+    </table>
+
+
+</section>

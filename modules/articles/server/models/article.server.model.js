@@ -38,6 +38,18 @@ var ArticleSchema = new Schema({
     default: '',
     trim: true
   },
+  newArrival: {
+    type: Boolean,
+    default: false
+  },
+  bestSeller: {
+    type: Boolean,
+    default: false
+  },
+  category: {
+    type: Schema.ObjectId,
+    /*ref: 'Category'*/
+  },
   user: {
     type: Schema.ObjectId,
     ref: 'User'

@@ -1,43 +1,69 @@
-﻿<section>
-  <div class="page-header">
-    <h1>
-      Articles
-      <a class="btn btn-primary pull-right" data-ui-sref="admin.articles.create">
-        <i class="glyphicon glyphicon-plus"></i>
-      </a>
-    </h1>
-  </div>
+﻿<div class="breadcrumb-area">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <ul>
+                            <li class="active"><a href="/admin/articles">All articales</a></li>
+                            <li>Add new article</li>
+                        </ul>
+                    </div>
+                </div>
+</div>
+              <div class="about-us-wrapper pt-60 pb-40">
+                <div class="container">
+                    <div class="row">
+                   
+                        <div class="col-12 order-last order-lg-first">
+                            <div class="about-text-wrap">
+                              
+                              <section>
+                                <div class="">
+                                  <h1>
+                                    All articles
+                                    <button class="btn btn-primary pull-right" data-ui-sref="admin.articles.create">
+                                      <i class="glyphicon glyphicon-plus"></i> Add new article
+                                    </button>
+                                  </h1>
+                                </div>
+                                
+                                <div class="list-group">
 
-  
-  <div class="list-group">
+                                  <table class="table">
+                                    <tr data-ng-repeat="article in vm.articles">
+                                    <td>  <img class="rounded float-start" src="../sources/images/product/large-size/{{article.photo}}"  style="width: 100px;" /> </td>
+                                      <td>
+                                          <a  data-ui-sref="admin.articles.edit({articleId: article._id})" class="text-secondary">           
+                                              <small class="">
+                                                Posted on
+                                                <span data-ng-bind="article.created | date:'mediumDate'"></span>
+                                                by
+                                                <span ng-if="article.user" ng-bind="article.user.displayName"></span>
+                                                <span ng-if="!article.user">Deleted User</span>
+                                              </small>
+                                              
+                                              <h4 class="text-secondary" data-ng-bind="article.title"></h4>
+                                              <p class="text-secondary" data-ng-bind="article.content"></p>      
 
-    <table class="table">
-      <tr data-ng-repeat="article in vm.articles">
-       <td>  <img class="rounded float-start" src="../sources/articles/photos/{{article.photo}}"  style="width: 100px;" /> </td>
-        <td>
-            <a  data-ui-sref="admin.articles.edit({articleId: article._id})" class="text-secondary">           
-                <small class="">
-                  Posted on
-                  <span data-ng-bind="article.created | date:'mediumDate'"></span>
-                  by
-                  <span ng-if="article.user" ng-bind="article.user.displayName"></span>
-                  <span ng-if="!article.user">Deleted User</span>
-                </small>
+                                          </a>
+                                      </td>
+                                      <td style="width: 150px;">  <span class="text-red rounded-pill" >{{article.price}} Mad</span> </td>
+                                    </tr>
+                                  </table>
+
+
+                                </div>
+
+
+                                <div class="alert alert-warning text-center" data-ng-if="vm.articles.$resolved && !vm.articles.length">
+                                  No articles yet, why don't you <a data-ui-sref="admin.articles.create">create one</a>?
+                                </div>
+                              </section>
+
+
+                            </div>
+                        </div>
                 
-                <h4 class="text-secondary" data-ng-bind="article.title"></h4>
-                <p class="text-secondary" data-ng-bind="article.content"></p>      
+                    </div>
+                </div>
+              </div>
 
-            </a>
-        </td>
-        <td>  <span class="badge bg-primary rounded-pill" >{{article.price}} Mad</span> </td>
-      </tr>
-    </table>
-
-
-  </div>
-
-
-  <div class="alert alert-warning text-center" data-ng-if="vm.articles.$resolved && !vm.articles.length">
-    No articles yet, why don't you <a data-ui-sref="admin.articles.create">create one</a>?
-  </div>
-</section>
+              <div class="about-us-wrapper pt-60 pb-40"></div>

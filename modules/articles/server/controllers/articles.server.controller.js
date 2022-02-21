@@ -12,8 +12,14 @@ var path = require('path'),
  * Create an article
  */
 exports.create = function (req, res) {
+
+  
   var article = new Article(req.body);
   article.user = req.user;
+  //article.category = req.category;
+   
+  console.log("req body result");
+  console.log(req.body);
 
   article.save(function (err) {
     if (err) {
@@ -48,6 +54,17 @@ exports.update = function (req, res) {
 
   article.title = req.body.title;
   article.content = req.body.content;
+  article.price = req.body.price;
+
+  article.photo = req.body.photo;
+  article.newArrival = req.body.newArrival;
+  article.bestSeller = req.body.bestSeller;
+
+  article.category = req.body.category;
+
+  console.log("req body update");
+  console.log(req.body);
+
 
   article.save(function (err) {
     if (err) {
