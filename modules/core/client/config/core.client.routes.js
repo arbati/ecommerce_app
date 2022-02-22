@@ -67,6 +67,19 @@
         data: {
           ignoreState: true
         }
-      });
+      }).state('contact', {
+        url: '/contact',
+        templateUrl: '/modules/core/client/views/contact.client.view.html',
+        data: {
+          ignoreState: true
+        }
+      }).state('about', {
+        url: '/about-us',
+        templateUrl: '/modules/core/client/views/about.client.view.html',
+        data: {
+          ignoreState: true
+        }
+      })
+      ;
   }
 }());
