@@ -28,6 +28,12 @@
                                 <div class="list-group">
 
                                   <table class="table">
+                                    <tr>
+                                      <td><b>Photo</b></td>
+                                      <td><b>Content</b></td>
+                                      <td><b>Price</b></td>
+                                      <td><b>Best / New</b></td>
+                                    </tr>
                                     <tr data-ng-repeat="article in vm.articles">
                                     <td>  <img class="rounded float-start" src="../sources/images/product/large-size/{{article.photo}}"  style="width: 100px;" /> </td>
                                       <td>
@@ -46,6 +52,19 @@
                                           </a>
                                       </td>
                                       <td style="width: 150px;">  <span class="text-red rounded-pill" >{{article.price}} Mad</span> </td>
+                                      <td style="width: 150px;">
+                                        <div class="product-image">
+                                          <span class="text-red rounded-pill sticker" data-ng-if="article.newArrival"> New</span>
+                                        </div>
+                                        <div class="product-image">
+                                          <span class="sticker" data-ng-if="article.bestSeller" style="background-color: green;"> Best</span>
+                                        </div>
+                                         
+                                          
+                                        </td>
+                                  
+                                  
+                                  
                                     </tr>
                                   </table>
 
